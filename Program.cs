@@ -1,31 +1,23 @@
-﻿using System.Runtime.CompilerServices;
+﻿using System;
 using System.Linq;
-using System.Diagnostics;
-public class backjoon2609
+using System.Runtime.CompilerServices;
+using System.Collections.Generic;
+
+public class Backjoon2751
 {
-    public static void Main(String[] args)
+
+    public static void Main(string[] args)
     {
-
-        int[] input = Console.ReadLine().Split(' ').Select(int.Parse).ToArray();
-        int num1 = input[0];
-        int num2 = input[1];
-        int GCD = 0;
-        int LCM = num1 * num2;
-        while (true)
+        int num = int.Parse(Console.ReadLine());
+        var list = new List<int>();
+        for (int i = 0; i < num; i++)
         {
-            int remain = num1 % num2;
-            num1 = num2;
-            num2 = remain;
-            if (remain == 0)
-            {
-                GCD = num1;
-                break;
-            }
-
-
+            list.Add(int.Parse(Console.ReadLine()));
         }
-        LCM /= GCD; 
-        Console.WriteLine(GCD +" "+ LCM);
-        
+        list.Sort();
+        for (int i = 0; i < list.Count; i++)
+        {
+            Console.WriteLine(list[i]);
+        }
     }
 }
